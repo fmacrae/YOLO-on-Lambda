@@ -5,37 +5,37 @@ Running YOLO from Darknet on AWS Jupyter
 ### Installing this on AWS Lambda
 Everything is already prepared in the zip file `darknetmin.zip` and it will use my S3 to pull the weights and sample image from.  The code that will execute is in the `service.py` file in the `handler(event, context)` fucntion.
 
-Step one - Create an AWS account.
-Step two - Create a Role in IAM, calling it something sensible like 'LambdaFullPlusS3' - I gave it AWSLambdaFullAccess, AmazonS3FullAccess and CloudWatchFullAccess which is probably more than needed but fine for a demo.
-Step three - Under Services select Lambda then 'Create Function'
-Author from scratch
-Give it a Name
-Runtime = Python 2.7
-Choose Existing Role
-Select the role you created in step two.
-Click 'Create Function'
-Step four - Under Function Code - Change Code Entry Type to 'Upload a .ZIP File'
-Step five - Change Handler to service.handler (this is because you want the code to execute service.py and the function called handler we defined)
-Step six - Under Function Package, click the Upload button.  Select the zip file from the repo or the one you created to replace it (darknetmin.zip if using mine)
-Step seven - Click save.
+1. Create an AWS account.
+2. Create a Role in IAM, calling it something sensible like 'LambdaFullPlusS3' - I gave it AWSLambdaFullAccess, AmazonS3FullAccess and CloudWatchFullAccess which is probably more than needed but fine for a demo.
+3. Under Services select Lambda then 'Create Function'
+ - Author from scratch
+ - Give it a Name
+ - Runtime = Python 2.7
+ - Choose Existing Role
+ - Select the role you created in step two.
+ - Click 'Create Function'
+4. Under Function Code - Change Code Entry Type to 'Upload a .ZIP File'
+5. Change Handler to service.handler (this is because you want the code to execute service.py and the function called handler we defined)
+6. Under Function Package, click the Upload button.  Select the zip file from the repo or the one you created to replace it (darknetmin.zip if using mine)
+7. Click save.
 Takes a second or two to upload.
-Step eight - Set up a test event
-Click Test
-Create new test event
-Event Template - Hello World
-Event Name - 'BasicTest'
-Delete the key value pairs leaveing just this in the test event:
+8. Set up a test event
+ - Click Test
+ - Create new test event
+ - Event Template - Hello World
+ - Event Name - 'BasicTest'
+ - Delete the key value pairs leaveing just this in the test event:
 ```
 {
 }
 ```
-Click Save.
-Step nine - Configure Basic Settings
-Move the slider to 2048Mb (You can go lower but it goes slower)
-Change Timeout to 1 minute.
-Click Save
-Step ten - Click Test
-Check your logs at the top and expand to see something like this:
+ - Click Save.
+9. Configure Basic Settings
+ - Move the slider to 2048Mb (You can go lower but it goes slower)
+ - Change Timeout to 1 minute.
+ - Click Save
+10. Click Test
+ - Check your logs at the top and expand to see something like this:
 ```
 26 x 256  0.177 BFLOPs
    57 conv    512  3 x 3 / 1    26 x  26 x 256   ->    26 x  26 x 512  1.595 BFLOPs
