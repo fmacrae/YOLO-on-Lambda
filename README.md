@@ -84,7 +84,7 @@ If you don't have the font required it still works or you can modify `font = 'fu
 To execute it locally with a sample image just run:
 ```
 $ wget https://s3-eu-west-1.amazonaws.com/myqueuecounter/darknet/street.jpg
-$ ./darknet detect cfg/yolov3.cfg yolov3.weights ../darknet/data/dog.jpg
+$ ./darknet detect cfg/yolov3.cfg yolov3.weights street.jpg
 ```
 
 You should see output like:
