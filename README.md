@@ -104,8 +104,7 @@ person: 63%
 ```
 And it will generate a file called `predictions.png` which will look like:
 
-![Annotated Image](https://s3.amazonaws.com/myqueuecounter/darknet/predictions.png?raw=true "Annotated Image")
-![Robots](https://s3.amazonaws.com/websofttechnology/roland.png)
+![Annotated Image](https://s3.amazonaws.com/myqueuecounter/darknet/predictions.png)
 
 To get it ready for upload just delete my zip file and the zip all the files and directories into a new zip file.
 
