@@ -1,6 +1,7 @@
 # YOLO-on-Lambda
 Running YOLO from Darknet on AWS Jupyter
 
+Big thanks to Redmon, Joseph and Farhadi, Ali for darknet https://pjreddie.com/darknet/yolo/ and Rustem Feyzkhanov for his https://github.com/ryfeus/lambda-packs repo which I used as inspiration for this.
 
 ### Installing this on AWS Lambda
 Everything is already prepared in the zip file `darknetmin.zip` and it will use my S3 to pull the weights and sample image from.  The code that will execute is in the `service.py` file in the `handler(event, context)` fucntion.
