@@ -107,6 +107,6 @@ And it will generate a file called `predictions.png` which will look like:
 
 ![Annotated Image](https://s3-eu-west-1.amazonaws.com/myqueuecounter/darknet/predictions.png)
 
-To get it ready for upload just delete my zip file and the zip all the files and directories into a new zip file.
+To get it ready for upload just delete my zip file and then zip all the files and directories into a new zip file.
 
-I'd encourage you to create your own S3 bucket to store the weights file and your input image.  Lots of good guides on youtube showing how to set up a S3 trigger to kick off your lambda function.  The main file to edit is `service.py` changin the bucket name and keys to what you like.
+I'd encourage you to create your own S3 bucket to store the weights file and your input image.  Lots of good guides on youtube showing how to set up a S3 trigger to kick off your lambda function.  The main file to edit is `service.py` changing the bucket name and keys to match your bucket name.
