@@ -1,5 +1,5 @@
 # YOLO-on-Lambda
-Running YOLO from Darknet on AWS Jupyter
+Running YOLOv3 from Darknet on AWS Lambda FaaS (Function as a Service)
 
 Big thanks to Redmon, Joseph and Farhadi, Ali for darknet https://pjreddie.com/darknet/yolo/ and Rustem Feyzkhanov for his https://github.com/ryfeus/lambda-packs repo which I used as inspiration for this.
 
