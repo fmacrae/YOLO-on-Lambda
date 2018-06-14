@@ -4,10 +4,10 @@ Running YOLOv3 from Darknet on AWS Lambda FaaS (Function as a Service)
 Big thanks to Redmon, Joseph and Farhadi, Ali for darknet https://pjreddie.com/darknet/yolo/ and Rustem Feyzkhanov for his https://github.com/ryfeus/lambda-packs repo which I used as inspiration for this.
 
 ### Installing this on AWS Lambda
-Everything is already prepared in the zip file `darknetmin.zip` and it will use my S3 to pull the weights and sample image from.  The code that will execute is in the `service.py` file in the `handler(event, context)` fucntion.
+Everything is already prepared in the zip file `darknetmin.zip` and it will use my S3 to pull the weights and sample image from.  The code that will execute is in the `service.py` file in the `handler(event, context)` function.
 
 1. Create an AWS account.
-2. Create a Role in IAM, calling it something sensible like 'LambdaFullPlusS3' - I gave it AWSLambdaFullAccess, AmazonS3FullAccess and CloudWatchFullAccess which is probably more than needed but fine for a demo.
+2. Create a Role in IAM, Under Services select IAM then select Roles from the sidebar.  Click Create Role, Select Lambda, click next.  Select permissions - I gave it AWSLambdaFullAccess, AmazonS3FullAccess and CloudWatchFullAccess which is probably more than needed but fine for a demo.  Click next.  Give the role a name calling it something sensible like 'LambdaFullPlusS3'.  Click Create.
 3. Under Services select Lambda then 'Create Function'
  - Author from scratch
  - Give it a Name
@@ -30,7 +30,7 @@ Takes a second or two to upload.
 {
 }
 ```
- - Click Save.
+ - Click Create.
 9. Configure Basic Settings
  - Move the slider to 2048Mb (You can go lower but it goes slower)
  - Change Timeout to 1 minute.
@@ -66,7 +66,7 @@ END RequestId: e13f4826-6dbc-11e8-af3c-1bdeaebb4bdf
 REPORT RequestId: e13f4826-6dbc-11e8-af3c-1bdeaebb4bdf	Duration: 19339.67 ms	Billed Duration: 19400 ms 	Memory Size: 2048 MB	Max Memory Used: 1210 MB	
 
 ```
-Nip over to cloud watch to debug if anything goes wrong.  Yay you now have darknet YOLO working on a platform that can scale to hundereds or thousands of concurrent instances and at a price that is so low.  If you manage to get out of the 'free tier' it still works out at around 8k images processed for every dollar.  Look up Youtube for guides on how to trigger this Lambda function from a file arriving in S3 and build an awesome on demand object detector.  Redirect the output to a file?  Lots of great options for using this.
+Nip over to cloud watch to debug if anything goes wrong.  You now have darknet YOLO working on a platform that can scale to hundreds or thousands of concurrent instances and at a price that is so low.  If you manage to get out of the 'free tier' it still works out at around 8k images processed for every dollar.  Look up Youtube for guides on how to trigger this Lambda function from a file arriving in S3 and build an awesome on demand object detector.  Redirect the output to a file?  Lots of great options for using this.
 
 
 ### Local Installation or modification
