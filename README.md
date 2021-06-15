@@ -16,10 +16,10 @@ Everything is already prepared in the zip file `darknetmin.zip` and it will use 
  - Select the role you created in step two.
  - Click 'Create Function'
 4. Under Function Code - Click 'Upload From' then select '.ZIP File'
-5. Change Handler to service.handler (this is because you want the code to execute service.py and the function called handler we defined)
-6. Under Function Package, click the Upload button.  Select the zip file from the repo or the one you created to replace it (darknetmin.zip if using mine)
-7. Click save.
+5. Under Function Package, click the Upload button.  Select the zip file from the repo or the one you created to replace it (darknetmin.zip if using mine)
+6. Click save.
 Takes a second or two to upload.
+7. Under Runtime settings (you find this below the code editor) click edit and Change Handler to service.handler (this is because you want the code to execute service.py and the function called handler we defined)
 8. Set up a test event
  - Click Test
  - Create new test event
