@@ -11,11 +11,11 @@ Everything is already prepared in the zip file `darknetmin.zip` and it will use 
 3. Under Services select Lambda then 'Create Function'
  - Author from scratch
  - Give it a Name
- - Runtime = Python 2.7
+ - Runtime = Python 3.8
  - Choose Existing Role
  - Select the role you created in step two.
  - Click 'Create Function'
-4. Under Function Code - Change Code Entry Type to 'Upload a .ZIP File'
+4. Under Function Code - Click 'Upload From' then select '.ZIP File'
 5. Change Handler to service.handler (this is because you want the code to execute service.py and the function called handler we defined)
 6. Under Function Package, click the Upload button.  Select the zip file from the repo or the one you created to replace it (darknetmin.zip if using mine)
 7. Click save.
