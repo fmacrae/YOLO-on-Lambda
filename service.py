@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-import urllib
+import urllib.request
 import os
 import subprocess
 import boto3
@@ -19,7 +19,7 @@ def handler(event, context):
     try:
         imgfilepath = '/tmp/inputimage.jpg'
         if ('imagelink' in event):
-          urllib.urlretrieve(event['imagelink'], imgfilepath)
+          urllib.request.urlretrieve(event['imagelink'], imgfilepath)
         else:
           strBucket = 'myqueuecounter'
           strKey = 'darknet/street.jpg'
